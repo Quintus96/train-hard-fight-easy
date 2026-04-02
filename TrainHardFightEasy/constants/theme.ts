@@ -3,10 +3,12 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
+import { Theme } from '@react-navigation/native';
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
+const tintColorLight = '#000000';
 const tintColorDark = '#fff';
+
 
 export const Colors = {
   light: {
@@ -24,6 +26,44 @@ export const Colors = {
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
+  },
+};
+
+
+
+export const LightTheme: Theme = {
+  dark: false,
+  colors: {
+    primary: '#fff',
+    background: '#ffffff',
+    card: '#ffffff',
+    text: '#11181C',
+    border: '#e5e5e5',
+    notification: '#fff',
+  },
+  fonts: {
+    regular: { fontFamily: 'System', fontWeight: '400' },
+    medium: { fontFamily: 'System', fontWeight: '500' },
+    bold: { fontFamily: 'System', fontWeight: '700' },
+    heavy: { fontFamily: 'System', fontWeight: '800' },
+  },
+};
+
+export const DarkTheme: Theme = {
+  dark: true,
+  colors: {
+    primary: '#000000',
+    background: '#151718',
+    card: '#1c1c1e',
+    text: '#ECEDEE',
+    border: '#272729',
+    notification: '#000000',
+  },
+  fonts: {
+    regular: { fontFamily: 'System', fontWeight: '400' },
+    medium: { fontFamily: 'System', fontWeight: '500' },
+    bold: { fontFamily: 'System', fontWeight: '700' },
+    heavy: { fontFamily: 'System', fontWeight: '800' },
   },
 };
 

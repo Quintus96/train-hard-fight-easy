@@ -1,4 +1,4 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 export interface ButtonProps {
   label: string;
@@ -7,11 +7,13 @@ export interface ButtonProps {
 
 export function Button({ label, onClick }: Readonly<ButtonProps>) {
   return (
-    <Pressable
-      onPress={onClick}
-      className="bg-blue-400 p-4 rounded-md self-start"
-    >
-      <Text className="font-semibold text-lg">{label}</Text>
-    </Pressable>
+    <View className="w-1/3">
+      <Pressable
+        onPress={onClick}
+        className="bg-slate-500 p-4 rounded-full flex items-center"
+      >
+        <Text className="font-semibold text-lg text-white ">{label}</Text>
+      </Pressable>
+    </View>
   );
 }

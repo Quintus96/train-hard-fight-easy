@@ -5,10 +5,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <View className="flex flex-grow bg-white">
-        <Text className="text-2xl font-bold text-blue-500">Home Page</Text>
-        <Button label="Go to Range" onClick={() => router.push("/Range")} />
+    <SafeAreaView className="flex-1 items-center">
+      <View className="flex flex-grow flex-row items-center gap-12">
+        <Button label="Benchmarks" onClick={() => router.push("/Range")} />
+        <Button label="Drills" onClick={() => router.push("/Range/drills")} />
       </View>
     </SafeAreaView>
   );
