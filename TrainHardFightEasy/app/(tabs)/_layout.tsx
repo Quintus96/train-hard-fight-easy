@@ -4,12 +4,9 @@ import {
   TabConfig,
   ThemedTabs,
 } from '@/components/atoms/ThemedTabs';
-import { useAppTheme } from '@/components/ThemeContext';
 import { IconName } from '@/constants/iconTypes';
 
 export default function TabLayout() {
-  const { colorScheme } = useAppTheme();
-
   const tabs: TabConfig[] = [
     {
       name: 'index',
