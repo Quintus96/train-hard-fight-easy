@@ -1,20 +1,20 @@
-
 export interface ButtonColor {
-  buttonColor: string, 
-  labelColor: string
+  buttonColor: string;
+  labelColor: string;
 }
 
 export interface ButtonTheme {
-  light: ButtonColor,
-  dark: ButtonColor
+  light: ButtonColor;
+  dark: ButtonColor;
 }
 
-export const ButtonColors: ButtonTheme = {
+export const ButtonThemes: ButtonTheme = {
   light: {
-    buttonColor: '#000000', 
-    labelColor: "#fff"
+    buttonColor: 'bg-black',
+    labelColor: 'text-white',
   },
   dark: {
-    buttonColor: "#fff",labelColor: '#000000'
-  }
-}
+    buttonColor: 'bg-white',
+    labelColor: 'text-black',
+  },
+};

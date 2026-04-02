@@ -1,18 +1,35 @@
-import { Pressable, Text, View } from "react-native";
+import { ButtonThemes } from '@/constants/buttonTheme';
+import {
+  Pressable,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 
 export interface ButtonProps {
   label: string;
   onClick: () => void;
 }
 
-export function Button({ label, onClick }: Readonly<ButtonProps>) {
+export function Button({
+  label,
+  onClick,
+}: Readonly<ButtonProps>) {
+  const colorScheme = useColorScheme();
+
+  const theme = ButtonThemes[colorScheme ?? 'light'];
+
   return (
     <View className="w-1/3">
       <Pressable
         onPress={onClick}
-        className="bg-slate-500 p-4 rounded-full flex items-center"
+        className={`${theme.buttonColor} p-4 rounded-full flex items-center`}
       >
-        <Text className="font-semibold text-lg text-white ">{label}</Text>
+        <Text
+          className={`font-semibold text-lg ${theme.labelColor}`}
+        >
+          {label}
+        </Text>
       </Pressable>
     </View>
   );
