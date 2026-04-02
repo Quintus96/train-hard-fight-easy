@@ -14,7 +14,7 @@ export function Button({
   const { colorScheme } = useAppTheme();
 
   const theme = ButtonThemes[colorScheme ?? 'light'];
-
+  console.log(theme);
   return (
     <View className="w-1/3">
       <Pressable
