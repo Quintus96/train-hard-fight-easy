@@ -1,11 +1,14 @@
 import {
+  ThemeContextProvider,
+  useAppTheme,
+} from '@/components/ThemeContext';
+import {
   Colors,
   DarkTheme,
   LightTheme,
 } from '@/constants/theme';
 import { ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
-import { useColorScheme } from 'react-native';
 import 'react-native-reanimated';
 import '../global.css';
 
@@ -13,8 +16,8 @@ export const unstable_settings = {
   anchor: '(tabs)',
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+function RootLayout() {
+  const { colorScheme } = useAppTheme();
 
   return (
     <ThemeProvider
@@ -40,5 +43,13 @@ export default function RootLayout() {
         <Stack.Screen name="Range" />
       </Stack>
     </ThemeProvider>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeContextProvider>
+      <RootLayout />
+    </ThemeContextProvider>
   );
 }
