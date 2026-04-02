@@ -1,10 +1,6 @@
 import { ButtonThemes } from '@/constants/buttonTheme';
-import {
-  Pressable,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { Pressable, Text, View } from 'react-native';
+import { useAppTheme } from '../ThemeContext';
 
 export interface ButtonProps {
   label: string;
@@ -15,7 +11,7 @@ export function Button({
   label,
   onClick,
 }: Readonly<ButtonProps>) {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useAppTheme();
 
   const theme = ButtonThemes[colorScheme ?? 'light'];
 
